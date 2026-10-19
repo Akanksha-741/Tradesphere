@@ -18,7 +18,7 @@ function Hero() {
           </p>
         </div>
         <div className="col-4 p-3 mb-5">
-          <img src="media/images/intradayTrades.svg " />
+          <img src="media/images/intradayTrades.svg " alt="Description of the image"/>
           <h4>Intraday and F&O trades</h4>
           <p>
             Flat ₹ 20 or 0.03% (whichever is lower) per executed order on

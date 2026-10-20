@@ -25,13 +25,22 @@ const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:3001",
   "https://tradesphere-frontend-one.vercel.app",
-  "https://tradesphere-frontend-706728wj0-trade-sphere1.vercel.app",
   "https://tradesphere-dashboard-three.vercel.app",
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        /^https:\/\/tradesphere-frontend-[a-z0-9]+-trade-sphere1\.vercel\.app$/.test(origin)
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );

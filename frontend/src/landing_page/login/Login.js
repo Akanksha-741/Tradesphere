@@ -32,7 +32,7 @@ function Login() {
 
    try {
   await axios.post(
-    "http://localhost:3002/api/auth/login",
+    "https://tradesphere-backend-7kg3.onrender.com/api/auth/login",
     {
       email: formData.email.trim(),
       password: formData.password,

@@ -22,31 +22,34 @@ const app = express();
 
 
 app.use(
-    cors({
-        origin: [
-            "http://localhost:3000",
-            "http://localhost:3001",
-        ],
-        credentials: true,
-    })
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://tradesphere-frontend-one.vercel.app",
+     "https://tradesphere-dashboard-three.vercel.app",
+    ],
+    credentials: true,
+  })
 );
 
 app.use(bodyParse.json());
 app.use(express.urlencoded({ extended: true }));
+app.set("trust proxy", 1);
 
 app.use(
-    session({
-        name: "connect.sid",
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            httpOnly: true,
-            secure: false, // Local HTTP development only
-            sameSite: "lax",
-            maxAge: 1000 * 60 * 60 * 24,
-        },
-    })
+  session({
+    name: "connect.sid",
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+      maxAge: 1000 * 60 * 60 * 24,
+    },
+  })
 );
 
 // Register authentication routes

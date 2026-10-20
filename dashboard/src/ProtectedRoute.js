@@ -7,7 +7,7 @@ function ProtectedRoute({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/api/auth/me", {
+      .get(`${process.env.REACT_APP_API_URL}/api/auth/me`, {
         withCredentials: true,
       })
       .then((response) => {
@@ -22,16 +22,17 @@ function ProtectedRoute({ children }) {
   }, []);
 
   useEffect(() => {
-  if (!loading && !isAuthenticated) {
-    window.location.replace("http://localhost:3000/login");
+    if (!loading && !isAuthenticated) {
+      window.location.replace(
+  "https://tradesphere-frontend-one.vercel.app/login"
+);}
+  }, [loading, isAuthenticated]);
+
+  if (loading || !isAuthenticated) {
+    return <p>Checking authentication...</p>;
   }
-}, [loading, isAuthenticated]);
 
-if (loading || !isAuthenticated) {
-  return <p>Checking authentication...</p>;
+  return children;
 }
 
-return children;
-}
-
-export default ProtectedRoute;
+export default ProtectedRoute; 

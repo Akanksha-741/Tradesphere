@@ -8,7 +8,7 @@ import axios from "axios";
 
 const AuthContext = createContext();
 
-const API_URL = "http://localhost:3002/api/auth";
+const API_URL = "https://tradesphere-backend-7kg3.onrender.com/api/auth";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);

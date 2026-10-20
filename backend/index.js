@@ -21,14 +21,17 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://tradesphere-frontend-one.vercel.app",
+  "https://tradesphere-frontend-706728wj0-trade-sphere1.vercel.app",
+  "https://tradesphere-dashboard-three.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-      "https://tradesphere-frontend-one.vercel.app",
-     "https://tradesphere-dashboard-three.vercel.app",
-    ],
+    origin: allowedOrigins,
     credentials: true,
   })
 );

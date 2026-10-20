@@ -42,7 +42,7 @@ function LeftSection({
             {googlePlay && (
               <a href={googlePlay} className="ms-2">
                 <img
-                  src="/media/images/googlePlayBadge.svg"
+                  src="/Media/images/googlePlayBadge.svg"
                   alt="Get it on Google Play"
                 />
               </a>
@@ -51,7 +51,7 @@ function LeftSection({
             {appStore && (
               <a href={appStore} className="ms-2">
                 <img
-                  src="/media/images/appStoreBadge.svg"
+                  src="/Media/images/appStoreBadge.svg"
                   alt="Download on the App Store"
                 />
               </a>

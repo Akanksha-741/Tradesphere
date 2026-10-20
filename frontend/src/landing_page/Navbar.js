@@ -96,7 +96,7 @@ function Navbar() {
     <li className="nav-item">
       <a
         className="nav-link"
-        href="http://localhost:3001"
+       href="https://tradesphere-dashboard-three.vercel.app"
       >
         Dashboard
       </a>

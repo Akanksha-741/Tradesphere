@@ -41,7 +41,7 @@ function Signup() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3002/api/auth/signup",
+      "https://tradesphere-backend-7kg3.onrender.com/api/auth/signup",
         {
           fullName: formData.fullName.trim(),
           email: formData.email.trim(),

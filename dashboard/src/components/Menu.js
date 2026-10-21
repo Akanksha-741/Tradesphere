@@ -123,7 +123,8 @@ const Menu = () => {
       setIsProfileDropdownOpen(false);
 
       // Redirect to the frontend login page
-      window.location.href = "http://localhost:3000/login";
+     // Redirect to the deployed frontend login page
+window.location.href = "https://tradesphere-frontend-one.vercel.app/login";
     } catch (error) {
       console.error("Logout failed:", error);
 

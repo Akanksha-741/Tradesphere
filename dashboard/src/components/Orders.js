@@ -11,7 +11,7 @@ const Orders = () => {
     const fetchOrders = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3002/allOrders",
+         "https://tradesphere-backend-7kg3.onrender.com/allOrders",
           { withCredentials: true }
         );
 

@@ -9,10 +9,9 @@ const Positions = () => {
   useEffect(() => {
     const fetchPositions = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:3002/allPositions",
-          { withCredentials: true }
-        );
+        const response = await axios.get("https://tradesphere-backend-7kg3.onrender.com/allPositions", {
+  withCredentials: true,
+});
 
         setPositions(response.data);
       } catch (err) {

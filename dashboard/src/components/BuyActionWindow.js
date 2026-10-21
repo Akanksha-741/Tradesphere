@@ -31,7 +31,7 @@ const BuyActionWindow = ({ uid }) => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3002/newOrder",
+      "https://tradesphere-backend-7kg3.onrender.com/newOrder",
         {
           name: uid,
           qty: Number(stockQuantity),
@@ -149,7 +149,7 @@ export const SellActionWindow = ({ uid }) => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://localhost:3002/newOrder",
+       "https://tradesphere-backend-7kg3.onrender.com/newOrder",
         {
           name: uid,
           qty: Number(stockQuantity),

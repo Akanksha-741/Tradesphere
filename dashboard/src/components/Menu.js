@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./menu.css";
-
-const API_URL = "http://localhost:3002/api/auth";
+const API_URL = "https://tradesphere-backend-7kg3.onrender.com/api/auth";
 
 const Menu = () => {
   const [user, setUser] = useState(null);

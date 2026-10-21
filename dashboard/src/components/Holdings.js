@@ -16,10 +16,9 @@ const Holdings = () => {
     try {
       setError("");
 
-      const response = await axios.get(
-        "http://localhost:3002/allHoldings",
-        { withCredentials: true }
-      );
+      const response = await axios.get("https://tradesphere-backend-7kg3.onrender.com/allHoldings", {
+  withCredentials: true,
+});
 
       setAllHoldings(response.data);
     } catch (error) {
